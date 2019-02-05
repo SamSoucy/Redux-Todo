@@ -1,8 +1,8 @@
-import { ADD_TODO, TOGGLE_TODO } from "../actions/index";
+import { ADD_TODO, TOGGLE_TODO} from "../actions/index";
 
 const initialState = {
     todos: [
-        { value: "Clean House", completed: false }
+        { value: "Clean House", completed: false}
     ]
 };
 
@@ -26,6 +26,9 @@ function reducer(state = initialState, action) {
                         : todo
                 )
             };
+            
+        
+            
         default:
             return state;
     }

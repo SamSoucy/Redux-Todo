@@ -30,3 +30,12 @@
     transform: rotate(360deg);
   }
 }
+
+.completed{
+  text-decoration: line-through red;
+  cursor: pointer;
+}
+
+.list{
+  cursor: pointer;
+}

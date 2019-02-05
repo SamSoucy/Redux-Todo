@@ -22,24 +22,27 @@ class TodoList extends React.Component {
         this.props.toggleTodo(index);
     };
 
+    
+
     render() {
         return (
             <>
                 <h1>ToDo List!!</h1>
-                <div>
+                <div className="list">
                     {this.props.todos.map((todo, index) => (
                         <h3
                             className={todo.completed ? "completed" : ""}
                             onClick={e => this.toggleTodo(e, index)}
                             key={index}
-                            >
+                        >
                             {todo.value}
                         </h3>
                     ))}
                 </div>
-                <input
+                <input 
                     type="text"
                     value={this.state.newTodo}
+                    placeholder="Todo"
                     onChange={this.handleChanges}
                 />
                 <button onClick={this.addTodo}>Add Todo</button>
@@ -50,10 +53,10 @@ class TodoList extends React.Component {
 }
 
 const mapStateToProps = state => ({
-    todos: state.todos
+    todos: state.todos,
 });
 
 export default connect(
     mapStateToProps,
-    { addNewTodo, toggleTodo }
+    { addNewTodo, toggleTodo}
 )(TodoList);

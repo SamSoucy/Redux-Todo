@@ -1,6 +1,7 @@
 export const ADD_TODO = "ADD_TODO";
 export const TOGGLE_TODO = "TOGGLE_TODO";
 
+
 export function addNewTodo(newTodo) {
     return {
         type: ADD_TODO,
@@ -14,3 +15,6 @@ export function toggleTodo(index) {
         payload: (index)
     };
 }
+
+
+
