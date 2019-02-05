@@ -2,7 +2,7 @@ import { ADD_TODO, TOGGLE_TODO } from "../actions/index";
 
 const initialState = {
     todos: [
-        { todo: "Clean House", compleated: false }
+        { value: "Clean House", completed: false }
     ]
 };
 
@@ -10,8 +10,8 @@ function reducer(state = initialState, action) {
     switch (action.type) {
         case ADD_TODO:
             const newTodo = {
-                todo: action.payload,
-                compleated: false
+                value: action.payload,
+                completed: false
             };
             return {
                 ...state,
@@ -22,7 +22,7 @@ function reducer(state = initialState, action) {
                 ...state,
                 todos: state.todos.map((todo, index) =>
                     action.payload === index
-                        ? { ...todo, compleated: !todo.compleated }
+                        ? { ...todo, completed: !todo.completed }
                         : todo
                 )
             };
