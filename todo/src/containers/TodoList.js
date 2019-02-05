@@ -25,15 +25,15 @@ class TodoList extends React.Component {
     render() {
         return (
             <>
-                <h1>ToDO List!!</h1>
+                <h1>ToDo List!!</h1>
                 <div>
                     {this.props.todos.map((todo, index) => (
-                        <h3>
+                        <h3
                             className={todo.completed ? "completed" : ""}
                             onClick={e => this.toggleTodo(e, index)}
                             key={index}
                             >
-                            {todo.name}
+                            {todo.value}
                         </h3>
                     ))}
                 </div>
